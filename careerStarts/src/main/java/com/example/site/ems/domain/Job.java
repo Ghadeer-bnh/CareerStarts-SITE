@@ -19,12 +19,12 @@ public class Job {
     @NotBlank
     @Size(min = 10, max = 200, message
             = "Job description must be between 30 and 200 characters")
-   @Pattern(regexp = "^[A-Za-z0-9]+$")
+   @Pattern(regexp = "^[A-Za-z0-9 ]+$")
     private String jobDescription;
     @NotBlank
     @Size(min = 5, max = 30, message
             = "Job Name must be between 10 and 30 characters")
-   @Pattern(regexp = "^[A-Za-z0-9]+$")
+   @Pattern(regexp = "^[A-Za-z0-9 ]+$")
     private String jobName;
    // @NotBlank
     //@Future
