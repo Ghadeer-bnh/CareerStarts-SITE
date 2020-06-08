@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Update an job</title>
+    <title>Update a job</title>
 
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
@@ -13,15 +13,11 @@
         <ul id="top-navigation">
             <li><span><span><a href="/">Homepage</a></span></span></li>
             <li><span><span><a href="/job/list">Jobs</a></span></span></li>
-<!--            <li><span><span><a href="/job/add">Add Employee</a></span></span></li>-->
+            <li><span><span><a href="/job/add">Add Job</a></span></span></li>
             <li><span><span><a href="/h2-console">H2 Admin Console</a></span></span></li>
         </ul>
     </div>
     <div id="middle">
-
-<!--        <div class="table"><img src="../static/images/bg-th-left.gif" th:src="@{/images/bg-th-left.gif}" width="8"-->
-<!--                                height="7" alt="" class="left"/> <img src="img/bg-th-right.gif" width="7" height="7"-->
-<!--                                                                      alt="" class="right"/>-->
 
             <form id="updateJobForm"
                   action="#"
@@ -31,69 +27,33 @@
 
                 <fieldset>
 
-<!--                    <table class="listing form" cellpadding="0" cellspacing="0">-->
-<!--                        <tr>-->
-<!--                            <th class="full" colspan="2">Add job</th>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <p class="first" width="172"><strong>Id</strong></p>-->
-<!--                            <td class="last">-->
+
                                 <input required type="number" readonly th:field="*{jobId}" id="jobId" hidden>
-<!--                    </td>-->
-<!--                        </tr>-->
+
                         <tr>
-                            <p class="first"><strong>job Name</strong></p>
-<!--                            <td class="last">-->
+                            <p class="required"><strong>job Name</strong></p>
+
                                 <input required th:field="*{jobName}" id="jobName" minlength="5" maxlength="30"
                                        pattern="^[A-Za-z0-9]+$">
-<!--                            </td>-->
-<!--                        </tr>-->
+                            <p class="msg">letters and numbers only, no punctuation or special characters</p>
 
-<!--                        <tr class="bg">-->
-                            <p class="first"><strong>job Description</strong></p>
-<!--                            <td class="last">-->
+
+                            <p class="required"><strong>job Description</strong></p>
                                 <input required th:field="*{jobDescription}" id="jobDescription" minlength="10" maxlength="200"
                                        pattern="^[A-Za-z0-9]+$">
-<!--                    </td>-->
-<!--                        </tr>-->
-<!--                    <tr>-->
-                        <p class="first"><strong>Salary</strong></p>
-<!--                        <td class="last">-->
+                            <p class="msg">letters and numbers only, no punctuation or special characters</p>
+
+                        <p class="required"><strong>Salary</strong></p>
+
                             <input required type="number" min="1" step="0.01" th:field="*{salary}" id="salary">
                             <span>SAR</span>
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                        <tr class="bg">-->
-                            <p class="first"><strong>ob due date</strong></p>
-<!--                            <td class="last">-->
+
+
+                            <p class="required"><strong>Job due date</strong></p>
                                 <input required type="date" th:field="*{dueDate}" id="jobdueDate">
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <td class="first"><strong>Email</strong></td>-->
-<!--                            <td class="last"><input required type="email" th:field="*{candidateName}" id="email"></td>-->
-<!--                        </tr>-->
-<!--                        <tr class="bg">-->
-<!--                            <td class="first"><strong>Department</strong></td>-->
-<!--                            <td class="last">-->
-<!--                                <select th:field="*{candidateEmail}" id="department">-->
-<!--                                    <option th:value="'HR'" th:text="Human_Resources"></option>-->
-<!--                                    <option th:value="'IT'" th:text="Information_Technology"></option>-->
-<!--                                    <option th:value="'Finance'" th:text="Finance"></option>-->
-<!--                                    <option th:value="'QA'" th:text="Quality_Assurance"></option>-->
-<!--                                    <option th:value="'Management'" th:text="Management"></option>-->
-<!--                                </select>-->
-<!--                            </td>-->
-<!--                        </tr>-->
 
-
-<!--                        <tr>-->
-<!--                            <th colspan="2">-->
                                 <button class="button" type="submit" id="submit">Update</button>
-<!--                            </th>-->
-<!--                        </tr>-->
 
-<!--                    </table>-->
 
                 </fieldset>
 

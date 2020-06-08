@@ -16,20 +16,7 @@
             <li><span><span><a href="/h2-console">H2 Admin Console</a></span></span></li>
         </ul>
     </div>
-<!--    <div id="middle">-->
 
-
-<!--        <div id="center-column">-->
-<!--            <div class="top-bar"><a href="/job/add" class="button">ADD NEW </a>-->
-<!--                <h1>Employees</h1>-->
-<!--                <div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Jobs</a></div>-->
-<!--            </div>-->
-<!--            <br/>-->
-
-<!--            <div class="table"><img src="../static/images/bg-th-left.gif" th:src="@{/images/bg-th-left.gif}" width="8"-->
-<!--                                    height="7" alt="" class="left"/> <img-->
-<!--                    src="../static/images/bg-th-right.gif" th:src="@{/images/bg-th-right.gif}" width="7" height="7"-->
-<!--                    alt="" class="right"/>-->
     <h2><strong>All Jobs</strong></h2>
                 <table class="listing" cellpadding="0" cellspacing="0" id="jobs">
                     <tr>
@@ -44,8 +31,6 @@
                     </tr>
 
                     <tr th:each="job: ${allJobs}">
-<!--                        <td class="first style1"><a  th:href="@{'/job/{id}'(id=${job.jobId})}"-->
-<!--                                                    th:text="${job.jobId}">00000</a></td>-->
 
                         <td th:text="${job.jobId}">ID</td>
                         <td th:text="${job.jobName}">name</td>
@@ -96,11 +81,7 @@
                     </tr>
 
                 </table>
-<!--                <div class="select"><strong>Other Pages: </strong>-->
-<!--                    <select>-->
-<!--                        <option>1</option>-->
-<!--                    </select>-->
-<!--                </div>-->
+
             </div>
 
         </div>

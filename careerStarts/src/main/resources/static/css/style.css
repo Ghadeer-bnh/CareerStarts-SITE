@@ -340,6 +340,15 @@
 /*!*}*!*/
 body ,section{
     font:15px/16px verdana,sans-serif;
+    background-color: #cccccc;
+}
+.msg{
+    font:10px/11px verdana;
+    color: gray;
+}
+.required:after {
+    content:" *";
+    color: red;
 }
 ul {
     list-style-type: none;

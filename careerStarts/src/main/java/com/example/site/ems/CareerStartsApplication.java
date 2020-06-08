@@ -7,10 +7,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class EmsApplication {
+public class CareerStartsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EmsApplication.class, args);
+        SpringApplication.run(CareerStartsApplication.class, args);
     }
 
 
