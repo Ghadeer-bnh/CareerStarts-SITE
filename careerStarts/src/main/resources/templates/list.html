@@ -1,0 +1,112 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>jobs List</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="header"> <a href="/" class="logo"><img src="../static/images/logo.png" th:src="@{/images/logo.png}" width="101" height="100" alt="" /></a>
+        <ul id="top-navigation">
+            <li><span><span><a href="/">Homepage</a></span></span></li>
+            <li class="active"><span><span>All Jobs</span></span></li>
+            <li><span><span><a href="/job/add">Add Job</a></span></span></li>
+            <li><span><span><a href="/h2-console">H2 Admin Console</a></span></span></li>
+        </ul>
+    </div>
+<!--    <div id="middle">-->
+
+
+<!--        <div id="center-column">-->
+<!--            <div class="top-bar"><a href="/job/add" class="button">ADD NEW </a>-->
+<!--                <h1>Employees</h1>-->
+<!--                <div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Jobs</a></div>-->
+<!--            </div>-->
+<!--            <br/>-->
+
+<!--            <div class="table"><img src="../static/images/bg-th-left.gif" th:src="@{/images/bg-th-left.gif}" width="8"-->
+<!--                                    height="7" alt="" class="left"/> <img-->
+<!--                    src="../static/images/bg-th-right.gif" th:src="@{/images/bg-th-right.gif}" width="7" height="7"-->
+<!--                    alt="" class="right"/>-->
+    <h2><strong>All Jobs</strong></h2>
+                <table class="listing" cellpadding="0" cellspacing="0" id="jobs">
+                    <tr>
+                        <th class="first" width="177">Job Id</th>
+                        <th th:width="500px">Job Name</th>
+                        <th width="500px">Job Description</th>
+                        <th>Job Salary</th>
+                        <th>Application Due-date</th>
+                        <th width="500">Job Availability</th>
+                        <th>Update</th>
+                        <th class="last">Delete</th>
+                    </tr>
+
+                    <tr th:each="job: ${allJobs}">
+<!--                        <td class="first style1"><a  th:href="@{'/job/{id}'(id=${job.jobId})}"-->
+<!--                                                    th:text="${job.jobId}">00000</a></td>-->
+
+                        <td th:text="${job.jobId}">ID</td>
+                        <td th:text="${job.jobName}">name</td>
+                        <td th:text="${job.jobDescription}">jobDescription</td>
+                        <td th:text="${job.salary} +' SAR'">0.0 <span>SAR</span></td>
+
+                        <td th:text="${job.dueDate}">job application due date</td>
+
+                        <td >
+                            <script th:inline="javascript">
+                                /*<![CDATA[*/
+
+                                var duedate = /*[[${job.dueDate}]]*/ 'default';
+
+                                var today = new Date();
+                                var dd = String(today.getDate()).padStart(2, '0');
+                                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                var yyyy = today.getFullYear();
+
+                                today = mm + '-' + dd + '-' + yyyy;
+                                if(new Date(today)>new Date(duedate)){
+                                    document.write("<p style='color:red;'>Not Available</p>");
+
+                                }
+                                else  {
+                                    document.write("<p style='color:limegreen;'>Available</p>");
+                                }
+
+
+                                /*]]>*/
+                            </script>
+
+                        </td>
+
+
+
+                        <td><a th:href="@{'/job/update/{id}' (id=${job.jobId})}">
+                            <img src="../static/images/edit-icon.gif" th:src="@{/images/edit-icon.gif}" width="16"
+                                 height="16" alt="save"/>
+                        </a></td>
+
+                        <td class="last">
+                            <a th:href="@{'/job/delete/{id}' (id=${job.jobId})}">
+                                <img src="../static/images/hr.gif" th:src="@{/images/hr.gif}" width="16" height="16"
+                                     alt="add"/>
+                            </a></td>
+
+                    </tr>
+
+                </table>
+<!--                <div class="select"><strong>Other Pages: </strong>-->
+<!--                    <select>-->
+<!--                        <option>1</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+            </div>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+
+</body>
+</html>
