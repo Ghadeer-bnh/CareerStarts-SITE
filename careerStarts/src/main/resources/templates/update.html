@@ -17,6 +17,7 @@
             <li><span><span><a href="/h2-console">H2 Admin Console</a></span></span></li>
         </ul>
     </div>
+    <h2><strong>Update a job</strong></h2>
     <div id="middle">
 
             <form id="updateJobForm"
@@ -45,12 +46,12 @@
 
                         <p class="required"><strong>Salary</strong></p>
 
-                            <input required type="number" min="1" step="0.01" th:field="*{salary}" id="salary">
+                            <input required type="number" min="1" step="0.00001" th:field="*{salary}" id="salary">
                             <span>SAR</span>
 
 
                             <p class="required"><strong>Job due date</strong></p>
-                                <input required type="date" th:field="*{dueDate}" id="jobdueDate">
+                                <input required type="date" max='2022-12-30' min='2020-01-01' th:field="*{dueDate}" id="jobdueDate">
 
                                 <button class="button" type="submit" id="submit">Update</button>
 
